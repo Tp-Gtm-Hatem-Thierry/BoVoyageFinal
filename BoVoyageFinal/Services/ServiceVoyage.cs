@@ -1,4 +1,18 @@
-﻿using System;
+﻿//private static void -Objet-()
+//{
+//    Console.WriteLine();
+//    Console.WriteLine("-Menu-");
+
+//    Classe objet = methode();
+
+//    using (var contexte = new Contexte())
+//    {
+//        contexte.Classe.Attach(objet);
+//        contexte.Classe.Remove(objet);
+//        contexte.SaveChanges();
+//    }
+//}
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -73,20 +87,6 @@ namespace BoVoyageFinal.Services
                 contexte.SaveChanges();
             }
         }
-        //private static void -Objet-()
-        //{
-        //    Console.WriteLine();
-        //    Console.WriteLine("-Menu-");
-
-        //    Classe objet = methode();
-
-        //    using (var contexte = new Contexte())
-        //    {
-        //        contexte.Classe.Attach(objet);
-        //        contexte.Classe.Remove(objet);
-        //        contexte.SaveChanges();
-        //    }
-        //}
 
         public Destination GetDestination(int idDestination)
         {
