@@ -43,13 +43,13 @@ namespace BoVoyageFinal.Services
             var dest = int.Parse(Console.ReadLine());
 
             Console.Write("Date et heure du départ: ");
-            var depart = Console.ReadLine();
+            DateTime depart = Console.ReadLine();
 
             Console.Write("Date et heure du retour: ");
-            var retour = Console.ReadLine();
+            DateTime retour = Console.ReadLine();
 
             Console.Write("Nombre de places disponibles: ");
-            var places = Console.ReadLine();
+            var places = int.Parse(Console.ReadLine();
 
             Console.Write("Prix par personne: ");
             var prix = Console.ReadLine();
