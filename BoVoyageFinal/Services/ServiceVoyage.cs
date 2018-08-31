@@ -12,7 +12,7 @@ namespace BoVoyageFinal.Services
 {
     public class ServiceVoyage
     {
-        public void AfficherVoyage()
+        public static void AfficherVoyage()
         {
             
             Console.WriteLine();
@@ -21,6 +21,7 @@ namespace BoVoyageFinal.Services
             {
                 var voyages = contexte.Voyages
                     .OrderBy(x => x.Id).ToList();
+                
                 foreach (var voyage in voyages)
                 {
                     Console.WriteLine($"{voyage.DateAller} ({voyage.DateRetour})");

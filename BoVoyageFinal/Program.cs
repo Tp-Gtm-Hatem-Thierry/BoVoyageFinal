@@ -30,8 +30,9 @@ namespace BoVoyageFinal
                             switch (choixMenuVoyage) // modification du nom des variables (choixMenu...)
                             {
                                 case "1":
-                                    var a = new ServiceVoyage();
-                                    a.AfficherVoyage();
+                                  
+                                    ServiceVoyage.AfficherVoyage();
+                                    
                                     
                                     break;
                                 case "2":
