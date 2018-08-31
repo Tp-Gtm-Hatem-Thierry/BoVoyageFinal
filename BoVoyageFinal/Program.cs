@@ -14,7 +14,7 @@ namespace BoVoyageFinal
         static void Main(string[] args)
         {
             bool continuer = true;
-            while (continuer)
+            while (continuer)   
             {
                 // var date = DateTime.Now; Ajout de la date
                 var choixMenuPrincipal = MenuPrincipal();
