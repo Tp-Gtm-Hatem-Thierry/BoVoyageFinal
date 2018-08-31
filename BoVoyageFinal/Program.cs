@@ -42,14 +42,14 @@ namespace BoVoyageFinal
                         Console.Clear();
                         while (boucleVoyage)
                         {
-
+                            string retourMenu = "\nAppuyez sur une touche pour revenir au menu";
                             var choixMenuVoyage = MenuVoyage();
                             switch (choixMenuVoyage)
                             {
                                 case 1:
                                     Console.Clear();
                                     ServiceVoyage.AfficherVoyage();
-                                    Console.WriteLine("Appuyez sur une touche pour revenir au menu");
+                                    Console.WriteLine(retourMenu);
                                     Console.ReadKey();
                                     Console.Clear();
 
@@ -57,28 +57,28 @@ namespace BoVoyageFinal
                                 case 2:
                                     Console.Clear();
                                     ServiceVoyage.CreerVoyage();
-                                    Console.WriteLine("Voyage Ajouté ! \nAppuyez sur une touche pour revenir au menu");
+                                    Console.WriteLine("Voyage Ajouté !",retourMenu);
                                     Console.ReadKey();
                                     Console.Clear();
                                     break;
                                 case 3:
                                     Console.Clear();
                                     ServiceVoyage.SupprimerVoyage();
-                                    Console.WriteLine("Voyage supprimé ! \nAppuyez sur une touche pour revenir au menu");
+                                    Console.WriteLine("Voyage supprimé !",retourMenu);
                                     Console.ReadKey();
                                     Console.Clear();
                                     break;
                                 case 4:
                                     Console.Clear();
                                     ServiceDestination.AfficherDestination();
-                                    Console.WriteLine("Appuyez sur une touche pour revenir au menu");
+                                    Console.WriteLine(retourMenu);
                                     Console.ReadKey();
                                     Console.Clear();
                                     break;
                                 case 5:
                                     Console.Clear();
                                     ServiceAgence.AfficherAgences();
-                                    Console.WriteLine("Appuyez sur une touche pour revenir au menu");
+                                    Console.WriteLine(retourMenu);
                                     Console.ReadKey();
                                     Console.Clear();
                                     break;
@@ -134,7 +134,7 @@ namespace BoVoyageFinal
 
                 Console.WriteLine("");
                 Console.WriteLine("");
-                Console.Write("\nQuel est vôtre choix ?\n");
+                Console.Write("\nChoisissez un chiffre ?\n");
 
                 return int.Parse(Console.ReadLine());
             }
@@ -142,20 +142,20 @@ namespace BoVoyageFinal
         static int MenuVoyage()
         {
 
-            Entites.Esthetisme.MiseEnFormeTexte("page : Gestion de nos offres voyage\n\n", ConsoleColor.DarkCyan, centre : false);
+            Entites.Esthetisme.MiseEnFormeTexte("page : Gestion de nos offres voyage\n\n", ConsoleColor.DarkCyan, centre : true);
             Console.WriteLine(". 1 . Liste de nos offres\n");
             Console.WriteLine(". 2 . Ajouter une offre\n");
             Console.WriteLine(". 3 . Supprimer une offre\n");
             Console.WriteLine(". 4 . Afficher les destinations\n");
             Console.WriteLine(". 5 . Afficher les agences de voyage\n");
             Console.WriteLine(". 6 . Retour\n");
-            Console.Write("\nQuel est vôtre choix ?\n ");
+            Console.Write("\nChoisissez un chiffre ?\n ");
 
             return int.Parse(Console.ReadLine());
         }
         static int MenuClient()
         {
-            Entites.Esthetisme.MiseEnFormeTexte("page : Gestion de nos clients\n\n", ConsoleColor.DarkCyan, centre : false);
+            Entites.Esthetisme.MiseEnFormeTexte("page : Gestion de nos clients\n\n", ConsoleColor.DarkCyan, centre : true);
             Console.WriteLine(". 1 . Nouvelles reservations\n");
             Console.WriteLine(". 2 . Liste de nos Clients\n");
             Console.WriteLine(". 3 . Campagne emailing\n");
@@ -163,6 +163,7 @@ namespace BoVoyageFinal
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine(". 4 . Retour\n");
+            Console.Write("\nChoisissez un chiffre ?\n ");
 
             return int.Parse(Console.ReadLine());
         }
