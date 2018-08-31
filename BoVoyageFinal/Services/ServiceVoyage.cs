@@ -1,18 +1,4 @@
-﻿//private static void -Objet-()
-//{
-//    Console.WriteLine();
-//    Console.WriteLine("-Menu-");
-
-//    Classe objet = methode();
-
-//    using (var contexte = new Contexte())
-//    {
-//        contexte.Classe.Attach(objet);
-//        contexte.Classe.Remove(objet);
-//        contexte.SaveChanges();
-//    }
-//}
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -43,14 +29,10 @@ namespace BoVoyageFinal.Services
                 }
             }
         }
-        private static void CreerVoyage()
+        public static void CreerVoyage()
         {
             Console.WriteLine();
-            Console.WriteLine(">NOUVELLE VOYAGE");
-
-            AfficherVoyage();
-            Console.Write("Id du voyage: ");
-            var id = int.Parse(Console.ReadLine());
+            Console.WriteLine(">NOUVEAU VOYAGE");
 
             ServiceDestination.AfficherDestination();
             Console.Write("Quelle l'id de la destination: ");
@@ -68,12 +50,12 @@ namespace BoVoyageFinal.Services
             Console.Write("Prix par personne: ");
             var prix = int.Parse(Console.ReadLine());
 
+            //afficher agence
             Console.Write("Quelle agence fournit le voyage ? ");
             var agence = int.Parse(Console.ReadLine());
 
 
             var voyage = new Voyage();
-            voyage.Id = id;
             voyage.IdDestination = dest;
             voyage.DateAller = depart;
             voyage.DateRetour = retour;
@@ -87,6 +69,7 @@ namespace BoVoyageFinal.Services
                 contexte.SaveChanges();
             }
         }
+       
 
         public Destination GetDestination(int idDestination)
         {
@@ -94,8 +77,7 @@ namespace BoVoyageFinal.Services
             {
                 return contexte.Destinations.Single(x => x.Id == idDestination);
 
-                    //.Include(x => x.Modeles)
-                    //.Single(x => x.Id == idMarque);
+                    
             }
         }
         private static Destination ChoisirDestination()
