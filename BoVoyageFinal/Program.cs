@@ -44,7 +44,7 @@ namespace BoVoyageFinal
                         {
 
                             var choixMenuVoyage = MenuVoyage();
-                            switch (choixMenuVoyage) // modification du nom des variables (choixMenu...)
+                            switch (choixMenuVoyage)
                             {
                                 case "1":
                                     Console.Clear();
@@ -116,7 +116,7 @@ namespace BoVoyageFinal
                         boucleMenu = false;
                         break;
                     default:
-                        Console.WriteLine("Choix invalide, veuiller recommencer");
+                        Entites.Esthetisme.MiseEnFormeTexte("Choix invalide, veuiller recommencer", ConsoleColor.Red, centre:true);
                         Console.ReadKey();
                         break;
                 }
@@ -128,9 +128,9 @@ namespace BoVoyageFinal
             Console.Clear();
             { 
                 Entites.Esthetisme.MiseEnFormeTexte("APPLICATION INTRANET DE BO VOYAGE\n\n", ConsoleColor.DarkCyan, centre: true);
-                Console.WriteLine(" 1. Gestion de BoVoyage\n");
-                Console.WriteLine(" 2. Gestion Reservations\n");
-                Console.WriteLine(" 3. Quitter BoVoyage\n");
+                Console.WriteLine(". 1 . Nos listes de Voyages\n");
+                Console.WriteLine(". 2 . Nos listes Clients\n");
+                Console.WriteLine(". 3 . Quitter BoVoyage\n");
 
                 Console.WriteLine("");
                 Console.WriteLine("");
@@ -142,27 +142,27 @@ namespace BoVoyageFinal
         static string MenuVoyage()
         {
 
-            Console.WriteLine("Gestion de BoVoyage\n\n");
-            Console.WriteLine(" 1. Liste de nos offres\n");
-            Console.WriteLine(" 2. Ajouter une offre\n");
-            Console.WriteLine(" 3. Supprimer une offre\n");
-            Console.WriteLine(" 4. Afficher les destinations\n");
-            Console.WriteLine(" 5. Afficher les agences de voyage\n");
-            Console.WriteLine(" 6. Retour\n");
+            Entites.Esthetisme.MiseEnFormeTexte("vous ête sur la page : Gestion de nos offres voyage\n\n", ConsoleColor.DarkCyan, centre : false);
+            Console.WriteLine(". 1 . Liste de nos offres\n");
+            Console.WriteLine(". 2 . Ajouter une offre\n");
+            Console.WriteLine(". 3 . Supprimer une offre\n");
+            Console.WriteLine(". 4 . Afficher les destinations\n");
+            Console.WriteLine(". 5 . Afficher les agences de voyage\n");
+            Console.WriteLine(". 6 . Retour\n");
             Console.Write("\nQuel est vôtre choix ?\n ");
 
             return Console.ReadLine();
         }
         static string MenuClient()
         {
-            Console.WriteLine("vous ête sur la page : Gestion de nos clients\n\n");
-            Console.WriteLine(" 1. Nouvelles reservations\n");
-            Console.WriteLine(" 2. Liste de nos Clients\n");
-            Console.WriteLine(" 3. Campagne emailing\n");
+            Entites.Esthetisme.MiseEnFormeTexte("vous ête sur la page : Gestion de nos clients\n\n", ConsoleColor.DarkCyan, centre : false);
+            Console.WriteLine(". 1 . Nouvelles reservations\n");
+            Console.WriteLine(". 2 . Liste de nos Clients\n");
+            Console.WriteLine(". 3 . Campagne emailing\n");
 
             Console.WriteLine("");
             Console.WriteLine("");
-            Console.WriteLine(" 4. Retour\n");
+            Console.WriteLine(". 4 . Retour\n");
 
             return Console.ReadLine();
         }
@@ -173,11 +173,12 @@ namespace BoVoyageFinal
             
             Console.WriteLine("\nVotre identifiant qui est votre prenom, je vous pries");
             var name = Console.ReadLine();
-           
-            if (name != "Yannick")//pas suffisament de temps pour ajouter une liste : Yannick
+
+            //pas suffisament de temps pour ajouter une liste
+            if (name != "Yannick")
             {
                 {
-                    Console.WriteLine($"\n\aVous n'êtes pas autoriser à acceder à notre site intranet, veuillez vous rapprocher de votre administrateur, {administrateur} désolé !");
+                    Entites.Esthetisme.MiseEnFormeTexte($"\n\aVous n'êtes pas autoriser à acceder à notre site intranet, veuillez vous rapprocher de votre administrateur, {administrateur} désolé !", ConsoleColor.DarkRed, centre : true);
                     Console.ReadKey();
                 }
             }
@@ -189,15 +190,16 @@ namespace BoVoyageFinal
 
                 while (boucleMdp)
                 {
+                    //pas suffisament de temps pour ajouter une liste
                     if (mdp == "N_i$a3")
                     {
                         boucleMdp = false;
                     }
                     else
                     {
-                    Console.WriteLine($"\n{name}, merci de rééssayer avec le mot de passe suivant : N_i$a3");
-//                   Console.Clear();
-// regler le problem de boucle infini
+                        // regler le probleme de boucle infini
+                    Entites.Esthetisme.MiseEnFormeTexte($"\n{name}, merci de rééssayer avec le mot de passe suivant : N_i$a3", ConsoleColor.Yellow, centre : true);
+                    //Console.Clear();
                     }
                 }
             }
