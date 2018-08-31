@@ -54,9 +54,9 @@ namespace BoVoyageFinal.Services
 
 
             Console.Write("Civilité : \n");
-            Console.WriteLine("1-Monsieur");
-            Console.WriteLine("2-Madame");
-            Console.WriteLine("3-Non Renseigné");
+            Console.WriteLine(". 1 .Monsieur");
+            Console.WriteLine(". 2 .Madame");
+            Console.WriteLine(". 3 .Non Renseigné");
             int choix = int.Parse(Console.ReadLine());
             string civilite;
             bool continuer = true;

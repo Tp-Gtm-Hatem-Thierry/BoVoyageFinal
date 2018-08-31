@@ -19,7 +19,6 @@ namespace BoVoyageFinal.Services
             Console.WriteLine("Liste des Agences :");
             using (var contexte = new Contexte())
             {
-                //var dest = contexte.Destinations.ToList();
                 var agences = contexte.AgencesVoyages
                     .OrderBy(x => x.Id).ToList();
 

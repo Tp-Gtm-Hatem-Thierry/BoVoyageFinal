@@ -18,8 +18,6 @@ namespace BoVoyageFinal.Services
             {
 
                 var destinations = contexte.Destinations;
-                    //.OrderBy(x => x.Id).ToList();
-
                 foreach (var destination in destinations)
                 {
                     Console.WriteLine($"({destination.Id}){destination.Continent}{destination.Pays} {destination.Region} {destination.Description}");
