@@ -146,7 +146,7 @@ namespace BoVoyageFinal
         }
         static int MenuClient()
         {
-            Entites.Esthetisme.MiseEnFormeTexte("vous ête sur la page : Gestion de nos clients\n\n", ConsoleColor.DarkCyan, centre : false);
+            Entites.Esthetisme.MiseEnFormeTexte("page : Gestion de nos clients\n\n", ConsoleColor.DarkCyan, centre : false);
             Console.WriteLine(". 1 . Ajouter une reservation (en cours)\n");
             Console.WriteLine(". 2 . Liste de nos Clients\n");
             Console.WriteLine(". 3 . Liste des participants (Pour la v.3.0) \n");
