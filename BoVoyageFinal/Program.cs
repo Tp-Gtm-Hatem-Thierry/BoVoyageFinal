@@ -1,4 +1,6 @@
-﻿using System;
+﻿/// Menu Intranet de BoVoyage avec acces par mot de passe, merci de lire les premieres lettre dans le readme puis de completer avec le reste de votre prenom, bien à vous Yannick !
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
