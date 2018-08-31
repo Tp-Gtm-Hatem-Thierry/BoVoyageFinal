@@ -30,16 +30,20 @@ namespace BoVoyageFinal
                             switch (choixMenuVoyage) // modification du nom des variables (choixMenu...)
                             {
                                 case "1":
-                                  
+                                    Console.Clear();
                                     ServiceVoyage.AfficherVoyage();
-                                    
+                                    Console.WriteLine();
                                     
                                     break;
                                 case "2":
+                                    Console.Clear();
+                                    ServiceDestination.AfficherDestination();
                                     break;
                                 case "3":
                                     break;
                                 case "4":
+                                    break;
+                                case "5":
                                     continuer2 = false;
                                     break;
                             }
@@ -113,10 +117,11 @@ namespace BoVoyageFinal
         {
 
             Console.WriteLine("vous ête sur la page : Gestion de nos offres voyage\n\n");
-            Console.WriteLine(" 1. Liste de nos offres\n");
-            Console.WriteLine(" 2. Ajouter une offre\n");
-            Console.WriteLine(" 3. Supprimer une offre\n");
-            Console.WriteLine(" 4. Retour\n");
+            Console.WriteLine(" 1. Liste de nos Voyages\n");
+            Console.WriteLine(" 2. Liste de nos Destinations\n");
+            Console.WriteLine(" 3. Ajouter une offre\n");
+            Console.WriteLine(" 4. Supprimer une offre\n");
+            Console.WriteLine(" 5. Retour\n");
             Console.Write("\nQuel est vôtre choix ?\n ");
 
             return Console.ReadLine();

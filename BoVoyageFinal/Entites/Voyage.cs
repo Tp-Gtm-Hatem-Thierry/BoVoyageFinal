@@ -5,11 +5,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BoVoyageFinal.Entites
 {
     public class Voyage
     {
+        [Key]
         public int Id { get; set; }
         public DateTime DateAller { get; set; }
         public DateTime DateRetour { get; set; }
@@ -21,7 +24,9 @@ namespace BoVoyageFinal.Entites
 
         //[ForeignKey("IdDestination")]
         public int IdDestination { get; set; }
-       
+
+        //public virtual ICollection<Destination> destinations { get; set; }
+
     }
 
 }

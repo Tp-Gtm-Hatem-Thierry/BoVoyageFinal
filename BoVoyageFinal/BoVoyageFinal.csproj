@@ -64,6 +64,8 @@
     <Compile Include="Entites\Voyage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ServiceDestination.cs" />
+    <Compile Include="Services\ServiceReservation.cs" />
     <Compile Include="Services\ServiceVoyage.cs" />
   </ItemGroup>
   <ItemGroup>
