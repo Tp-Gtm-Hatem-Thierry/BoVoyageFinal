@@ -37,7 +37,7 @@ namespace BoVoyageFinal
                 var choixMenuPrincipal = MenuPrincipal();
                 switch (choixMenuPrincipal)
                 {
-                    case "1":
+                    case 1:
                         bool boucleVoyage = true;
                         Console.Clear();
                         while (boucleVoyage)
@@ -46,7 +46,7 @@ namespace BoVoyageFinal
                             var choixMenuVoyage = MenuVoyage();
                             switch (choixMenuVoyage)
                             {
-                                case "1":
+                                case 1:
                                     Console.Clear();
                                     ServiceVoyage.AfficherVoyage();
                                     Console.WriteLine("Appuyez sur une touche pour revenir au menu");
@@ -54,28 +54,28 @@ namespace BoVoyageFinal
                                     Console.Clear();
 
                                     break;
-                                case "2":
+                                case 2:
                                     Console.Clear();
                                     ServiceVoyage.CreerVoyage();
                                     Console.WriteLine("Voyage Ajouté ! \nAppuyez sur une touche pour revenir au menu");
                                     Console.ReadKey();
                                     Console.Clear();
                                     break;
-                                case "3":
+                                case 3:
                                     Console.Clear();
                                     ServiceVoyage.SupprimerVoyage();
                                     Console.WriteLine("Voyage supprimé ! \nAppuyez sur une touche pour revenir au menu");
                                     Console.ReadKey();
                                     Console.Clear();
                                     break;
-                                case "4":
+                                case 4:
                                     Console.Clear();
                                     ServiceDestination.AfficherDestination();
                                     Console.WriteLine("Appuyez sur une touche pour revenir au menu");
                                     Console.ReadKey();
                                     Console.Clear();
                                     break;
-                                case "5":
+                                case 5:
                                     Console.Clear();
                                     ServiceAgence.AfficherAgences();
                                     Console.WriteLine("Appuyez sur une touche pour revenir au menu");
@@ -83,14 +83,14 @@ namespace BoVoyageFinal
                                     Console.Clear();
                                     break;
 
-                                case "6":
+                                case 6:
                                     boucleVoyage = false;
                                     break;
 
                             }
                         }
                         break;
-                    case "2":
+                    case 2:
                         bool boucleClient = true;
                         Console.Clear();
                         while (boucleClient)
@@ -99,20 +99,20 @@ namespace BoVoyageFinal
                             var choixMenuClient = MenuClient();
                             switch (choixMenuClient)
                             {
-                                case "1":
+                                case 1:
                                     //ListeOffres();
                                     break;
-                                case "2":
+                                case 2:
                                     break;
-                                case "3":
+                                case 3:
                                     break;
-                                case "4":
+                                case 4:
                                     boucleClient = false;
                                     break;
                             }
                         }
                         break;
-                    case "3":
+                    case 3:
                         boucleMenu = false;
                         break;
                     default:
@@ -123,7 +123,7 @@ namespace BoVoyageFinal
             }
 
         }
-        public static string MenuPrincipal()
+        public static int MenuPrincipal()
         {
             Console.Clear();
             { 
@@ -136,10 +136,10 @@ namespace BoVoyageFinal
                 Console.WriteLine("");
                 Console.Write("\nQuel est vôtre choix ?\n");
 
-                return Console.ReadLine();
+                return int.Parse(Console.ReadLine());
             }
         }
-        static string MenuVoyage()
+        static int MenuVoyage()
         {
 
             Entites.Esthetisme.MiseEnFormeTexte("page : Gestion de nos offres voyage\n\n", ConsoleColor.DarkCyan, centre : false);
@@ -151,9 +151,9 @@ namespace BoVoyageFinal
             Console.WriteLine(". 6 . Retour\n");
             Console.Write("\nQuel est vôtre choix ?\n ");
 
-            return Console.ReadLine();
+            return int.Parse(Console.ReadLine());
         }
-        static string MenuClient()
+        static int MenuClient()
         {
             Entites.Esthetisme.MiseEnFormeTexte("page : Gestion de nos clients\n\n", ConsoleColor.DarkCyan, centre : false);
             Console.WriteLine(". 1 . Nouvelles reservations\n");
@@ -164,7 +164,7 @@ namespace BoVoyageFinal
             Console.WriteLine("");
             Console.WriteLine(". 4 . Retour\n");
 
-            return Console.ReadLine();
+            return int.Parse(Console.ReadLine());
         }
         static void Login()
         {
