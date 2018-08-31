@@ -19,12 +19,12 @@ namespace BoVoyageFinal.Services
             Console.WriteLine(">DESTINATION :");
             using (var contexte = new Contexte())
             {
-                var destination = contexte.Destinations
+                var destinations = contexte.Destinations
                 .OrderBy(x => x.Id).ToList();
-                foreach (var continent in destinations)
-            }
-            {
+                foreach (var destination in destinations)
+                {
                 Console.WriteLine($"{destination.Continent} ({destination.Description})");
+                }
             }
         }
     }
