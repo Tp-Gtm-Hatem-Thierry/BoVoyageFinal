@@ -16,7 +16,7 @@ namespace BoVoyageFinal.Services
         {
             
             Console.WriteLine();
-            Esthetisme.MiseEnFormeTexte(">  Voyages :",ConsoleColor.DarkCyan, centre : true);
+            Esthetisme.MiseEnFormeTexte("Voyages :",ConsoleColor.DarkCyan, centre : true);
             using (var contexte = new Contexte())
             {
                 var voyages = contexte.Voyages
@@ -32,7 +32,7 @@ namespace BoVoyageFinal.Services
         {
             AfficherVoyage();
             Console.WriteLine("");
-            Console.WriteLine("Selectionnez l'Id du voyage à supprimer ?");
+            Esthetisme.MiseEnFormeTexte("Selectionnez l'Id du voyage à supprimer ?",ConsoleColor.Yellow,centre:true);
             var idvoyage = int.Parse(Console.ReadLine());
 
             using (var contexte = new Contexte())
@@ -48,7 +48,7 @@ namespace BoVoyageFinal.Services
         public static void CreerVoyage()
         {
             Console.WriteLine();
-            Esthetisme.MiseEnFormeTexte("> Enregistrer un NOUVEAU VOYAGE\n",ConsoleColor.DarkCyan, centre:true);
+            Esthetisme.MiseEnFormeTexte("Enregistrer un NOUVEAU VOYAGE\n",ConsoleColor.DarkCyan, centre:true);
 
             ServiceDestination.AfficherDestination();
             Console.Write("Selectionner l'id de la destination : ");
