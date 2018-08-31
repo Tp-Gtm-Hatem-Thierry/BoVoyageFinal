@@ -29,7 +29,7 @@ namespace BoVoyageFinal
     {
         static void Main(string[] args)
         {
-            Login();
+            //Login();
             bool continuer = true;
             while (continuer)
             {
@@ -53,7 +53,8 @@ namespace BoVoyageFinal
                                     break;
                                 case "2":
                                     Console.Clear();
-                                    ServiceDestination.AfficherDestination();
+                                    
+                                    ServiceVoyage.CreerVoyage();
                                     break;
                                 case "3":
                                     break;

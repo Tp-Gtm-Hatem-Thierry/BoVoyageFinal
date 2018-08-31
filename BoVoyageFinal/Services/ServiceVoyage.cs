@@ -29,37 +29,33 @@ namespace BoVoyageFinal.Services
                 }
             }
         }
-        private static void CreerVoyage()
+        public static void CreerVoyage()
         {
             Console.WriteLine();
-            Console.WriteLine(">NOUVELLE VOYAGE");
-
-            AfficherVoyage();
-            Console.Write("Id du voyage: ");
-            var id = int.Parse(Console.ReadLine());
+            Console.WriteLine(">NOUVEAU VOYAGE");
 
             ServiceDestination.AfficherDestination();
             Console.Write("Quelle l'id de la destination: ");
             var dest = int.Parse(Console.ReadLine());
 
             Console.Write("Date et heure du départ: ");
-            DateTime depart = Console.ReadLine();
+            DateTime depart = DateTime.Parse(Console.ReadLine());
 
             Console.Write("Date et heure du retour: ");
-            DateTime retour = Console.ReadLine();
+            DateTime retour = DateTime.Parse(Console.ReadLine());
 
             Console.Write("Nombre de places disponibles: ");
-            var places = int.Parse(Console.ReadLine();
+            var places = int.Parse(Console.ReadLine());
 
             Console.Write("Prix par personne: ");
-            var prix = Console.ReadLine();
+            var prix = int.Parse(Console.ReadLine());
 
+            //afficher agence
             Console.Write("Quelle agence fournit le voyage ? ");
-            var agence = Console.ReadLine();
+            var agence = int.Parse(Console.ReadLine());
 
 
             var voyage = new Voyage();
-            voyage.Id = id;
             voyage.IdDestination = dest;
             voyage.DateAller = depart;
             voyage.DateRetour = retour;
@@ -69,24 +65,11 @@ namespace BoVoyageFinal.Services
 
             using (var contexte = new Contexte())
             {
-                contexte.Marques.Add(marque);
+                contexte.Voyages.Add(voyage);
                 contexte.SaveChanges();
             }
         }
-        //private static void SupprimerVoyage()
-        //{
-        //    Console.WriteLine();
-        //    Console.WriteLine(">SUPPRESSION D'UNE MARQUE");
-
-        //    Marque marque = ChoisirMarque();
-
-        //    using (var contexte = new Contexte())
-        //    {
-        //        contexte.Marques.Attach(marque);
-        //        contexte.Marques.Remove(marque);
-        //        contexte.SaveChanges();
-        //    }
-        //}
+       
 
         public Destination GetDestination(int idDestination)
         {
@@ -94,8 +77,7 @@ namespace BoVoyageFinal.Services
             {
                 return contexte.Destinations.Single(x => x.Id == idDestination);
 
-                    //.Include(x => x.Modeles)
-                    //.Single(x => x.Id == idMarque);
+                    
             }
         }
         private static Destination ChoisirDestination()
