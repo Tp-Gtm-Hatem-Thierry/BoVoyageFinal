@@ -12,21 +12,22 @@ namespace BoVoyageFinal.Services
 {
     public class ServiceAgence
     {
-        public static void AfficherVoyage()
+        public static void AfficherAgences()
         {
 
             Console.WriteLine();
-            Console.WriteLine(">Voyages :");
+            Console.WriteLine("Liste des Agences :");
             using (var contexte = new Contexte())
             {
                 //var dest = contexte.Destinations.ToList();
-                var voyages = contexte.Voyages
+                var agences = contexte.AgencesVoyages
                     .OrderBy(x => x.Id).ToList();
 
-                foreach (var voyage in voyages)
+                foreach (var agence in agences)
                 {
-                    Console.WriteLine($"({voyage.Id}){voyage.PlacesDisponibles}{voyage.PrixParPersonne} {voyage.DateAller} {voyage.DateRetour} {voyage.IdDestination}");
+                    Console.WriteLine($"({agence.Id}) {agence.Nom}");
                 }
             }
         }
+    }
 }

@@ -29,6 +29,20 @@ namespace BoVoyageFinal.Services
                 }
             }
         }
+        public static void SupprimerVoyage()
+        {
+            Console.WriteLine();
+            Console.WriteLine(">SUPPRESSION D'UNE MARQUE");
+
+            Marque marque = ChoisirMarque();
+
+            using (var contexte = new Contexte())
+            {
+                contexte.Marques.Attach(marque);
+                contexte.Marques.Remove(marque);
+                contexte.SaveChanges();
+            }
+        }
         public static void CreerVoyage()
         {
             Console.WriteLine();

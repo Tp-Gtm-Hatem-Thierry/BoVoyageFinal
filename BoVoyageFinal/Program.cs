@@ -29,8 +29,9 @@ namespace BoVoyageFinal
     {
         static void Main(string[] args)
         {
-            Login();
+            //Login();
             bool boucleMenu = true;
+            Console.Clear();
             while (boucleMenu)
             {
                 var choixMenuPrincipal = MenuPrincipal();
@@ -46,22 +47,39 @@ namespace BoVoyageFinal
                             switch (choixMenuVoyage) // modification du nom des variables (choixMenu...)
                             {
                                 case "1":
-                                  
+                                    Console.Clear();
                                     ServiceVoyage.AfficherVoyage();
-                                    
-                                    
+                                    Console.WriteLine("Appuyez sur une touche pour revenir au menu");
+                                    Console.ReadKey();
+                                    Console.Clear();
+
                                     break;
                                 case "2":
                                     Console.Clear();
-                                    ServiceDestination.AfficherDestination();
+                                    ServiceVoyage.CreerVoyage();
                                     break;
                                 case "3":
+                                    //supprimer Voyage
                                     break;
                                 case "4":
+                                    Console.Clear();
+                                    ServiceDestination.AfficherDestination();
+                                    Console.WriteLine("Appuyez sur une touche pour revenir au menu");
+                                    Console.ReadKey();
+                                    Console.Clear();
                                     break;
                                 case "5":
+                                    Console.Clear();
+                                    ServiceAgence.AfficherAgences();
+                                    Console.WriteLine("Appuyez sur une touche pour revenir au menu");
+                                    Console.ReadKey();
+                                    Console.Clear();
+                                    break;
+
+                                case "6":
                                     boucleVoyage = false;
                                     break;
+
                             }
                         }
                         break;
@@ -121,7 +139,9 @@ namespace BoVoyageFinal
             Console.WriteLine(" 1. Liste de nos offres\n");
             Console.WriteLine(" 2. Ajouter une offre\n");
             Console.WriteLine(" 3. Supprimer une offre\n");
-            Console.WriteLine(" 4. Retour\n");
+            Console.WriteLine(" 4. Afficher les destinations\n");
+            Console.WriteLine(" 5. Afficher les agences de voyage\n");
+            Console.WriteLine(" 6. Retour\n");
             Console.Write("\nQuel est vôtre choix ?\n ");
 
             return Console.ReadLine();
