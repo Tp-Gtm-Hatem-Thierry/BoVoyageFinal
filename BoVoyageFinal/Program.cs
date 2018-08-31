@@ -128,9 +128,9 @@ namespace BoVoyageFinal
             Console.Clear();
             { 
                 Entites.Esthetisme.MiseEnFormeTexte("APPLICATION INTRANET DE BO VOYAGE\n\n", ConsoleColor.DarkCyan, centre: true);
-                Console.WriteLine(". 1 . Nos listes de Voyages\n");
-                Console.WriteLine(". 2 . Nos listes Clients\n");
-                Console.WriteLine(". 3 . Quitter BoVoyage\n");
+                Console.WriteLine(". 1 . Gestion de vos Voyages\n");
+                Console.WriteLine(". 2 . Gestion de vos Clients\n");
+                Console.WriteLine(". 3 . Quitter l'intranet de BoVoyage\n");
 
                 Console.WriteLine("");
                 Console.WriteLine("");
@@ -142,7 +142,7 @@ namespace BoVoyageFinal
         static string MenuVoyage()
         {
 
-            Entites.Esthetisme.MiseEnFormeTexte("vous ête sur la page : Gestion de nos offres voyage\n\n", ConsoleColor.DarkCyan, centre : false);
+            Entites.Esthetisme.MiseEnFormeTexte("page : Gestion de nos offres voyage\n\n", ConsoleColor.DarkCyan, centre : false);
             Console.WriteLine(". 1 . Liste de nos offres\n");
             Console.WriteLine(". 2 . Ajouter une offre\n");
             Console.WriteLine(". 3 . Supprimer une offre\n");
@@ -155,7 +155,7 @@ namespace BoVoyageFinal
         }
         static string MenuClient()
         {
-            Entites.Esthetisme.MiseEnFormeTexte("vous ête sur la page : Gestion de nos clients\n\n", ConsoleColor.DarkCyan, centre : false);
+            Entites.Esthetisme.MiseEnFormeTexte("page : Gestion de nos clients\n\n", ConsoleColor.DarkCyan, centre : false);
             Console.WriteLine(". 1 . Nouvelles reservations\n");
             Console.WriteLine(". 2 . Liste de nos Clients\n");
             Console.WriteLine(". 3 . Campagne emailing\n");
@@ -197,10 +197,12 @@ namespace BoVoyageFinal
                     }
                     else
                     {
-                        // regler le probleme de boucle infini
-                    Entites.Esthetisme.MiseEnFormeTexte($"\n{name}, merci de rééssayer avec le mot de passe suivant : N_i$a3", ConsoleColor.Yellow, centre : true);
-                    //Console.Clear();
+                    Console.ReadLine();
+                    // regler le probleme de boucle infini
+                    Entites.Esthetisme.MiseEnFormeTexte($"\nMerci, {name} de rééssayer avec le mot de passe suivant : N_i$a3", ConsoleColor.Yellow, centre : true);
                     }
+                    boucleMdp = true; //je n'arrive a aller au menu principal ensuite... a travailler
+                    //return;
                 }
             }
         }
