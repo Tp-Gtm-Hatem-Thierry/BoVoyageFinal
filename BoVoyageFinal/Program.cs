@@ -1,4 +1,20 @@
-﻿using System;
+﻿                //Console.WriteLine("\nVotre identifiant qui est votre prenom, je vous pries");
+                //var name = Console.ReadLine();
+                //var date = DateTime.Now;
+                //if (name != "Yannik")//une liste de commercial par exemple : Yannik
+                //{
+                //    string administrateur = ("gtm@gmail.com");
+                //    {
+                //        Console.WriteLine($"\n\aVous n'êtes pas autoriser à acceder à notre site intranet, veuillez vous rapprocher de votre administrateur, {administrateur} désolé !");
+                //        Console.ReadKey();
+                //    }
+                //}
+                //else
+                //{
+                //    Console.WriteLine($"\nBienvenu {name}, veuillez entrez votre mot de passe");
+                //    var mdp = Console.ReadLine();
+                //    if (mdp == "N_i$a3")//liste de mdp egalement... : N_i$a3
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,10 +29,10 @@ namespace BoVoyageFinal
     {
         static void Main(string[] args)
         {
+            Login();
             bool continuer = true;
-            while (continuer)   
+            while (continuer)
             {
-                // var date = DateTime.Now; Ajout de la date
                 var choixMenuPrincipal = MenuPrincipal();
                 switch (choixMenuPrincipal)
                 {
@@ -30,9 +46,9 @@ namespace BoVoyageFinal
                             switch (choixMenuVoyage) // modification du nom des variables (choixMenu...)
                             {
                                 case "1":
-                                    Console.Clear();
+                                  
                                     ServiceVoyage.AfficherVoyage();
-                                    Console.WriteLine();
+                                    
                                     
                                     break;
                                 case "2":
@@ -80,34 +96,19 @@ namespace BoVoyageFinal
                         break;
                 }
             }
-            
+
         }
         public static string MenuPrincipal()
         {
-            //ex : Esthetisme.MiseEnFormeTexte("APPLICATION METIER DE BO VOYAGE\n\n", ConsoleColor.DarkCyan, centre: true);
             Console.Clear();
-            {   // Pour le Fun § à intégrer si ca compile !
-                //Console.WriteLine("\nVotre identifiant qui est votre prenom, je vous pries");
-                //var name = Console.ReadLine();
-                //var date = DateTime.Now;
-                //    if (name != "Yannik")//une liste de commercial par exemple // Yannik
-                //    {
-                //       string administrateur = ("gtm@gmail.com");
-                //       {
-                //            Console.WriteLine($"\n\aVous n'êtes pas autoriser à acceder à notre site, veuillez vous rapprocher de votre administrateur, {administrateur} désolé !");
-                //            Console.ReadKey();
-                //        }
-                //   }
-                // else
-                //{
-                //    Console.WriteLine($"\nBienvenu {name}, veuillez entrez votre mot de passe");
-                //    var mdp = Console.ReadLine();
-                //    if (mdp == "N_i$a3")//liste de mdp egalement... // N_i$a3
-
-                Console.WriteLine("BoVoyage\n");
-                Entites.Esthetisme.MiseEnFormeTexte("APPLICATION METIER DE BO VOYAGE\n\n", ConsoleColor.DarkCyan, centre: true); Console.WriteLine(" 1. Nos listes de Voyages\n");
+            { 
+                Entites.Esthetisme.MiseEnFormeTexte("APPLICATION INTRANET DE BO VOYAGE\n\n", ConsoleColor.DarkCyan, centre: true);
+                Console.WriteLine(" 1. Nos listes de Voyages\n");
                 Console.WriteLine(" 2. Nos listes Clients\n");
                 Console.WriteLine(" 3. Quitter BoVoyage\n");
+
+                Console.WriteLine("");
+                Console.WriteLine("");
                 Console.Write("\nQuel est vôtre choix ?\n");
 
                 return Console.ReadLine();
@@ -117,11 +118,10 @@ namespace BoVoyageFinal
         {
 
             Console.WriteLine("vous ête sur la page : Gestion de nos offres voyage\n\n");
-            Console.WriteLine(" 1. Liste de nos Voyages\n");
-            Console.WriteLine(" 2. Liste de nos Destinations\n");
-            Console.WriteLine(" 3. Ajouter une offre\n");
-            Console.WriteLine(" 4. Supprimer une offre\n");
-            Console.WriteLine(" 5. Retour\n");
+            Console.WriteLine(" 1. Liste de nos offres\n");
+            Console.WriteLine(" 2. Ajouter une offre\n");
+            Console.WriteLine(" 3. Supprimer une offre\n");
+            Console.WriteLine(" 4. Retour\n");
             Console.Write("\nQuel est vôtre choix ?\n ");
 
             return Console.ReadLine();
@@ -132,9 +132,48 @@ namespace BoVoyageFinal
             Console.WriteLine(" 1. Nouvelles reservations\n");
             Console.WriteLine(" 2. Liste de nos Clients\n");
             Console.WriteLine(" 3. Campagne emailing\n");
+
+            Console.WriteLine("");
+            Console.WriteLine("");
             Console.WriteLine(" 4. Retour\n");
 
             return Console.ReadLine();
+        }
+        static void Login()
+        {
+            string administrateur = ("gtm@gmail.com");
+            var date = DateTime.Now;
+            
+            Console.WriteLine("\nVotre identifiant qui est votre prenom, je vous pries");
+            var name = Console.ReadLine();
+           
+            if (name != "Yannick")//pas suffisament de temps pour ajouter une liste : Yannick
+            {
+                {
+                    Console.WriteLine($"\n\aVous n'êtes pas autoriser à acceder à notre site intranet, veuillez vous rapprocher de votre administrateur, {administrateur} désolé !");
+                    Console.ReadKey();
+                }
+            }
+            else
+            {
+                Console.WriteLine($"\nBienvenu {name}, veuillez entrez votre mot de passe");
+                var mdp = Console.ReadLine();
+                bool bouclemdp = true;
+
+                while (bouclemdp)
+                {
+                    if (mdp == "N_i$a3")
+                    {
+                        bouclemdp = false;
+                    }
+                    else
+                    {
+                    Console.WriteLine($"\n{name}, merci de rééssayer avec le mot de passe suivant : N_i$a3");
+//                   Console.Clear();
+// regler le problem de boucle infini
+                    }
+                }
+            }
         }
 
     }
