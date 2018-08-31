@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace BoVoyageFinal.Entites
 {
     public class Participant
     {
+        [Key]
         public int NumeroUnique { get; set; }
         public double Reduction { get; set; }
         public string Civilite { get; set; }
