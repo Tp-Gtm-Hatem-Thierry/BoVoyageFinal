@@ -29,17 +29,17 @@ namespace BoVoyageFinal
     {
         static void Main(string[] args)
         {
-            //Login();
-            bool continuer = true;
-            while (continuer)
+            Login();
+            bool boucleMenu = true;
+            while (boucleMenu)
             {
                 var choixMenuPrincipal = MenuPrincipal();
                 switch (choixMenuPrincipal)
                 {
                     case "1":
-                        bool continuer2 = true;
+                        bool boucleVoyage = true;
                         Console.Clear();
-                        while (continuer2)
+                        while (boucleVoyage)
                         {
 
                             var choixMenuVoyage = MenuVoyage();
@@ -53,23 +53,22 @@ namespace BoVoyageFinal
                                     break;
                                 case "2":
                                     Console.Clear();
-                                    
-                                    ServiceVoyage.CreerVoyage();
+                                    ServiceDestination.AfficherDestination();
                                     break;
                                 case "3":
                                     break;
                                 case "4":
                                     break;
                                 case "5":
-                                    continuer2 = false;
+                                    boucleVoyage = false;
                                     break;
                             }
                         }
                         break;
                     case "2":
-                        bool continuer3 = true;
+                        bool boucleClient = true;
                         Console.Clear();
-                        while (continuer3)
+                        while (boucleClient)
                         {
 
                             var choixMenuClient = MenuClient();
@@ -83,13 +82,13 @@ namespace BoVoyageFinal
                                 case "3":
                                     break;
                                 case "4":
-                                    continuer3 = false;
+                                    boucleClient = false;
                                     break;
                             }
                         }
                         break;
                     case "3":
-                        continuer = false;
+                        boucleMenu = false;
                         break;
                     default:
                         Console.WriteLine("Choix invalide, veuiller recommencer");
@@ -157,15 +156,15 @@ namespace BoVoyageFinal
             }
             else
             {
-                Console.WriteLine($"\nBienvenu {name}, veuillez entrez votre mot de passe");
+                Console.WriteLine($"\nBienvenu {name}, veuillez tapez votre mot de passe");
                 var mdp = Console.ReadLine();
-                bool bouclemdp = true;
+                bool boucleMdp = true;
 
-                while (bouclemdp)
+                while (boucleMdp)
                 {
                     if (mdp == "N_i$a3")
                     {
-                        bouclemdp = false;
+                        boucleMdp = false;
                     }
                     else
                     {
