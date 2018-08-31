@@ -29,7 +29,7 @@ namespace BoVoyageFinal
     {
         static void Main(string[] args)
         {
-            //Login();
+            Login();
             bool boucleMenu = true;
             Console.Clear();
             while (boucleMenu)
@@ -180,40 +180,51 @@ namespace BoVoyageFinal
             string administrateur = ("gtm@gmail.com");
             var date = DateTime.Now;
             
+
+            //pas suffisament de temps pour ajouter une liste
+            bool boucleid = true;
+            while (boucleid)
+            {
             Console.WriteLine("\nVotre identifiant qui est votre prenom, je vous pries");
             var name = Console.ReadLine();
 
-            //pas suffisament de temps pour ajouter une liste
-            if (name != "Yannick")
-            {
+                if (name != "Yannick")
+
                 {
-                    Entites.Esthetisme.MiseEnFormeTexte($"\n\aVous n'êtes pas autoriser à acceder à notre site intranet, veuillez vous rapprocher de votre administrateur, {administrateur} désolé !", ConsoleColor.DarkRed, centre : true);
-                    Console.ReadKey();
+                    //Entites.Esthetisme.MiseEnFormeTexte($"\n\aVous n'êtes pas autoriser à acceder à notre site intranet, veuillez vous rapprocher de votre administrateur, {administrateur} désolé !", ConsoleColor.DarkRed, centre: true);
+                    Console.WriteLine("Recommencez");
+                    
+                }
+
+                else
+                {
+                    //Console.WriteLine($"\nBienvenu {name}");
+                    
+                    boucleid = false;
                 }
             }
-            else
+            Console.Clear();
+            bool boucleMdp = true;
+            while (boucleMdp)
             {
-                Console.WriteLine($"\nBienvenu {name}, veuillez tapez votre mot de passe");
+                Console.WriteLine("Veuillez tapez votre mot de passe");
                 var mdp = Console.ReadLine();
-                bool boucleMdp = true;
-
-                while (boucleMdp)
-                {
                     //pas suffisament de temps pour ajouter une liste
-                    if (mdp == "N_i$a3")
+                    if (mdp != "N_i$a3")
                     {
-                        boucleMdp = false;
+                    Console.WriteLine("Recommencez");
+                    //Entites.Esthetisme.MiseEnFormeTexte($"\n\aVous n'êtes pas autoriser à acceder à notre site intranet, veuillez vous rapprocher de votre administrateur, {administrateur} désolé !", ConsoleColor.DarkRed, centre: true);
+                    
                     }
                     else
                     {
-                    Console.ReadLine();
-                    // regler le probleme de boucle infini
-                    Entites.Esthetisme.MiseEnFormeTexte($"\nMerci, {name} de rééssayer avec le mot de passe suivant : N_i$a3", ConsoleColor.Yellow, centre : true);
+                    Console.WriteLine("Bienvenu Yannick ! Appuie sur une touche pour continuer.");
+                    Console.ReadKey();
+                    boucleMdp = false;
                     }
-                    boucleMdp = true; //je n'arrive a aller au menu principal ensuite... a travailler
                     //return;
-                }
             }
+            
         }
 
     }
