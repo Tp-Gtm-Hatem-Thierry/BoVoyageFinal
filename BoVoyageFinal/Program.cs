@@ -99,13 +99,15 @@ namespace BoVoyageFinal
                             var choixMenuClient = MenuClient();
                             switch (choixMenuClient)
                             {
-                                case "1":
+                                case 1:
                                     Console.Clear();
                                     ServiceClient.AjouterReservation();
                                     break;
-                                case "2":
+                                case 2:
                                     Console.Clear();
                                     ServiceClient.AfficherClient();
+                                    Console.ReadKey();
+
                                     break;
                                 case 3:
                                     break;
