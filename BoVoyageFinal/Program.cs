@@ -100,9 +100,12 @@ namespace BoVoyageFinal
                             switch (choixMenuClient)
                             {
                                 case "1":
-                                    //ListeOffres();
+                                    Console.Clear();
+                                    ServiceClient.AjouterReservation();
                                     break;
                                 case "2":
+                                    Console.Clear();
+                                    ServiceClient.AfficherClient();
                                     break;
                                 case "3":
                                     break;
@@ -128,8 +131,8 @@ namespace BoVoyageFinal
             Console.Clear();
             { 
                 Entites.Esthetisme.MiseEnFormeTexte("APPLICATION INTRANET DE BO VOYAGE\n\n", ConsoleColor.DarkCyan, centre: true);
-                Console.WriteLine(". 1 . Nos listes de Voyages\n");
-                Console.WriteLine(". 2 . Nos listes Clients\n");
+                Console.WriteLine(". 1 . Gestion des Voyages\n");
+                Console.WriteLine(". 2 . Gestion des Clients\n");
                 Console.WriteLine(". 3 . Quitter BoVoyage\n");
 
                 Console.WriteLine("");
@@ -156,12 +159,15 @@ namespace BoVoyageFinal
         static string MenuClient()
         {
             Entites.Esthetisme.MiseEnFormeTexte("vous ête sur la page : Gestion de nos clients\n\n", ConsoleColor.DarkCyan, centre : false);
-            Console.WriteLine(". 1 . Nouvelles reservations\n");
+            Console.WriteLine(". 1 . Ajouter une reservation (en cours)\n");
             Console.WriteLine(". 2 . Liste de nos Clients\n");
-            Console.WriteLine(". 3 . Campagne emailing\n");
+            Console.WriteLine(". 3 . Liste des participants (Pour la v.3.0) \n");
+            Console.WriteLine(". 4 . Consulter Modifier (Pour la v.3.0) \n");
+            Console.WriteLine(". 5 . Campagne emailing (Pour la v.3.0) \n");
 
             Console.WriteLine("");
             Console.WriteLine("");
+
             Console.WriteLine(". 4 . Retour\n");
 
             return Console.ReadLine();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BoVoyageFinal.Entites
 {
-    public class Personne
+    public abstract class Personne
     {
         public string Civilite { get; set; }
         public string Nom { get; set; }

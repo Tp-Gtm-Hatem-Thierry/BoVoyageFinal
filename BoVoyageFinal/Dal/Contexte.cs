@@ -21,5 +21,7 @@ namespace BoVoyageFinal.Dal
         public DbSet<Participant> Participants { get; set; }
 
         public DbSet<Voyage> Voyages { get; set; }
+
+        public DbSet<Assurance> Assurances { get; set; }
     }
 }
