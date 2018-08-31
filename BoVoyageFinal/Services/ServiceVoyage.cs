@@ -24,28 +24,31 @@ namespace BoVoyageFinal.Services
                 
                 foreach (var voyage in voyages)
                 {
-                    Console.WriteLine($"({voyage.Id}){voyage.PlacesDisponibles}{voyage.PrixParPersonne} {voyage.DateAller} {voyage.DateRetour} {voyage.IdDestination}");
+                    Console.WriteLine($"({voyage.Id}){voyage.PlacesDisponibles}  {voyage.PrixParPersonne}  {voyage.DateAller}  {voyage.DateRetour}  {voyage.IdDestination}");
                 }
             }
         }
         public static void SupprimerVoyage()
         {
-            Console.WriteLine();
-            Console.WriteLine(">SUPPRESSION D'UNE MARQUE");
-
-            Marque marque = ChoisirMarque();
+            AfficherVoyage();
+            Console.WriteLine("");
+            Console.WriteLine("Selectionnez l'Id du voyage à supprimer?");
+            var idvoyage = int.Parse(Console.ReadLine());
 
             using (var contexte = new Contexte())
             {
-                contexte.Marques.Attach(marque);
-                contexte.Marques.Remove(marque);
+                Voyage voyage = contexte.Voyages.Single(x => x.Id == idvoyage);
+                contexte.Voyages.Attach(voyage);
+                contexte.Voyages.Remove(voyage);
                 contexte.SaveChanges();
             }
+            
+            
         }
         public static void CreerVoyage()
         {
             Console.WriteLine();
-            Console.WriteLine(">Enregistrer un NOUVEAU VOYAGE");
+            Console.WriteLine(">Enregistrer un NOUVEAU VOYAGE\n");
 
             ServiceDestination.AfficherDestination();
             Console.Write("Selectionner l'id de la destination : ");
@@ -57,13 +60,14 @@ namespace BoVoyageFinal.Services
             Console.Write("Date et heure du retour : ");
             DateTime retour = DateTime.Parse(Console.ReadLine());
 
-            Console.Write("Nombre de participant au voyage : ");
+            Console.Write("Nombre de places disponibles : ");
             var places = int.Parse(Console.ReadLine());
 
             Console.Write("Tarif par personne: ");
             var prix = int.Parse(Console.ReadLine());
 
-            Console.Write("Quelle est l'agence fournisseur du voyage selectionné ? ");
+            Console.Write("Quelle est l'agence fournisseur du voyage selectionné ?\n ");
+            ServiceAgence.AfficherAgences();
             var agence = int.Parse(Console.ReadLine());
 
 
@@ -80,27 +84,6 @@ namespace BoVoyageFinal.Services
                 contexte.Voyages.Add(voyage);
                 contexte.SaveChanges();
             }
-        }
-       
-
-        public Destination GetDestination(int idDestination)
-        {
-            using (var contexte = new Contexte())
-            {
-                return contexte.Destinations.Single(x => x.Id == idDestination);
-
-                    
-            }
-        }
-        private static Destination ChoisirDestination()
-        {
-            AfficherVoyage();
-
-            Console.WriteLine("Quel voyage souhaitez vous ?");
-            var idDest = int.Parse(Console.ReadLine());
-
-            var serviceVoyage= new ServiceVoyage();
-            return serviceVoyage.GetDestination(idDest);
         }
         
     }

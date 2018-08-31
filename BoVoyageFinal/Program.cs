@@ -57,9 +57,16 @@ namespace BoVoyageFinal
                                 case "2":
                                     Console.Clear();
                                     ServiceVoyage.CreerVoyage();
+                                    Console.WriteLine("Voyage Ajouté ! \nAppuyez sur une touche pour revenir au menu");
+                                    Console.ReadKey();
+                                    Console.Clear();
                                     break;
                                 case "3":
-                                    //supprimer Voyage
+                                    Console.Clear();
+                                    ServiceVoyage.SupprimerVoyage();
+                                    Console.WriteLine("Voyage supprimé ! \nAppuyez sur une touche pour revenir au menu");
+                                    Console.ReadKey();
+                                    Console.Clear();
                                     break;
                                 case "4":
                                     Console.Clear();
@@ -121,8 +128,8 @@ namespace BoVoyageFinal
             Console.Clear();
             { 
                 Entites.Esthetisme.MiseEnFormeTexte("APPLICATION INTRANET DE BO VOYAGE\n\n", ConsoleColor.DarkCyan, centre: true);
-                Console.WriteLine(" 1. Nos listes de Voyages\n");
-                Console.WriteLine(" 2. Nos listes Clients\n");
+                Console.WriteLine(" 1. Gestion de BoVoyage\n");
+                Console.WriteLine(" 2. Gestion Reservations\n");
                 Console.WriteLine(" 3. Quitter BoVoyage\n");
 
                 Console.WriteLine("");
@@ -135,7 +142,7 @@ namespace BoVoyageFinal
         static string MenuVoyage()
         {
 
-            Console.WriteLine("vous ête sur la page : Gestion de nos offres voyage\n\n");
+            Console.WriteLine("Gestion de BoVoyage\n\n");
             Console.WriteLine(" 1. Liste de nos offres\n");
             Console.WriteLine(" 2. Ajouter une offre\n");
             Console.WriteLine(" 3. Supprimer une offre\n");
