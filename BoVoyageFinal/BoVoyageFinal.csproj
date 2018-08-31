@@ -58,6 +58,7 @@
     <Compile Include="Entites\Client.cs" />
     <Compile Include="Entites\Destination.cs" />
     <Compile Include="Entites\DossierReservation.cs" />
+    <Compile Include="Entites\Esthetisme.cs" />
     <Compile Include="Entites\Participant.cs" />
     <Compile Include="Entites\Personne.cs" />
     <Compile Include="Entites\Voyage.cs" />

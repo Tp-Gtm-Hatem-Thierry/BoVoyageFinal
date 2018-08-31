@@ -78,10 +78,9 @@ namespace BoVoyageFinal
             }
             
         }
-        static string MenuPrincipal()
+        public static string MenuPrincipal()
         {
             //ex : Esthetisme.MiseEnFormeTexte("APPLICATION METIER DE BO VOYAGE\n\n", ConsoleColor.DarkCyan, centre: true);
-
             Console.Clear();
             {   // Pour le Fun § à intégrer si ca compile !
                 //Console.WriteLine("\nVotre identifiant qui est votre prenom, je vous pries");
@@ -102,8 +101,7 @@ namespace BoVoyageFinal
                 //    if (mdp == "N_i$a3")//liste de mdp egalement... // N_i$a3
 
                 Console.WriteLine("BoVoyage\n");
-                Console.WriteLine("MENU PRINCIPAL\n");
-                Console.WriteLine(" 1. Nos listes de Voyages\n");
+                Entites.Esthetisme.MiseEnFormeTexte("APPLICATION METIER DE BO VOYAGE\n\n", ConsoleColor.DarkCyan, centre: true); Console.WriteLine(" 1. Nos listes de Voyages\n");
                 Console.WriteLine(" 2. Nos listes Clients\n");
                 Console.WriteLine(" 3. Quitter BoVoyage\n");
                 Console.Write("\nQuel est vôtre choix ?\n");
