@@ -19,7 +19,6 @@ namespace BoVoyageFinal.Services
             Console.WriteLine(">Voyages :");
             using (var contexte = new Contexte())
             {
-                //var dest = contexte.Destinations.ToList();
                 var voyages = contexte.Voyages
                     .OrderBy(x => x.Id).ToList();
                 
@@ -32,26 +31,25 @@ namespace BoVoyageFinal.Services
         public static void CreerVoyage()
         {
             Console.WriteLine();
-            Console.WriteLine(">NOUVEAU VOYAGE");
+            Console.WriteLine(">Enregistrer un NOUVEAU VOYAGE");
 
             ServiceDestination.AfficherDestination();
-            Console.Write("Quelle l'id de la destination: ");
+            Console.Write("Selectionner l'id de la destination : ");
             var dest = int.Parse(Console.ReadLine());
 
-            Console.Write("Date et heure du départ: ");
+            Console.Write("Date et heure du départ : ");
             DateTime depart = DateTime.Parse(Console.ReadLine());
 
-            Console.Write("Date et heure du retour: ");
+            Console.Write("Date et heure du retour : ");
             DateTime retour = DateTime.Parse(Console.ReadLine());
 
-            Console.Write("Nombre de places disponibles: ");
+            Console.Write("Nombre de participant au voyage : ");
             var places = int.Parse(Console.ReadLine());
 
-            Console.Write("Prix par personne: ");
+            Console.Write("Tarif par personne: ");
             var prix = int.Parse(Console.ReadLine());
 
-            //afficher agence
-            Console.Write("Quelle agence fournit le voyage ? ");
+            Console.Write("Quelle est l'agence fournisseur du voyage selectionné ? ");
             var agence = int.Parse(Console.ReadLine());
 
 
@@ -84,7 +82,7 @@ namespace BoVoyageFinal.Services
         {
             AfficherVoyage();
 
-            Console.WriteLine("Quel voyage?");
+            Console.WriteLine("Quel voyage souhaitez vous ?");
             var idDest = int.Parse(Console.ReadLine());
 
             var serviceVoyage= new ServiceVoyage();
