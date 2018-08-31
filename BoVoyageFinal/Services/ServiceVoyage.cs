@@ -14,9 +14,8 @@ namespace BoVoyageFinal.Services
     {
         public void AfficherVoyage()
         {
-            
             Console.WriteLine();
-            Console.WriteLine(">Voyages :");
+            Console.WriteLine(">VOYAGE :");
             using (var contexte = new Contexte())
             {
                 var voyages = contexte.Voyages
@@ -26,8 +25,6 @@ namespace BoVoyageFinal.Services
                     Console.WriteLine($"{voyage.DateAller} ({voyage.DateRetour})");
                 }
             }
-
-            
         }
     }
 }
