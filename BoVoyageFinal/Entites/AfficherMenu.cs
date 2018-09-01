@@ -1,7 +1,21 @@
-﻿namespace BoVoyageFinal.Entites
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using BoVoyageFinal.Dal;
+using System.Data.Entity;
+using BoVoyageFinal.Services;
+using BoVoyageFinal.Entites;
+/// <summary>
+/// recherche de comment faire pour passer la gestion du menu à la classe AfficherMenu, en pause pour le moment
+/// </summary>
+
+namespace BoVoyageFinal.Entites
 {
-    internal class AfficherMenu
-    {        Login();
+    public class AfficherMenu
+    {
+        Login();
         bool boucleMenu = true;
         Console.Clear();
             while (boucleMenu)
@@ -29,14 +43,14 @@
                                 case 2:
                                     Console.Clear();
                                     ServiceVoyage.CreerVoyage();
-                                    Console.WriteLine("Voyage Ajouté !",retourMenu);
+                                    Console.WriteLine("Voyage Ajouté !", retourMenu);
                                     Console.ReadKey();
                                     Console.Clear();
                                     break;
                                 case 3:
                                     Console.Clear();
                                     ServiceVoyage.SupprimerVoyage();
-                                    Console.WriteLine("Voyage supprimé !",retourMenu);
+                                    Console.WriteLine("Voyage supprimé !", retourMenu);
                                     Console.ReadKey();
                                     Console.Clear();
                                     break;
@@ -93,7 +107,7 @@ Console.Clear();
                         boucleMenu = false;
                         break;
                     default:
-                        Entites.Esthetisme.MiseEnFormeTexte("Choix invalide, veuiller recommencer", ConsoleColor.Red, centre:true);
+                        Entites.Esthetisme.MiseEnFormeTexte("Choix invalide, veuiller recommencer", ConsoleColor.Red, centre: true);
                         Console.ReadKey();
                         break;
                 }
@@ -193,7 +207,4 @@ static void Login()
         }
     }
 
-}
-
-    }
 }
