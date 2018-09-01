@@ -24,7 +24,7 @@ namespace BoVoyageFinal.Services
 
                 foreach (var agence in agences)
                 {
-                    Console.WriteLine($"({agence.Id}) {agence.Nom}");
+                    Esthetisme.MiseEnFormeTexte($"({agence.Id}) {agence.Nom}",ConsoleColor.Yellow,centre:true);
                 }
             }
         }

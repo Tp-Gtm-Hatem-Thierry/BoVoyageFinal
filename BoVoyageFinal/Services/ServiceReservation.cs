@@ -14,7 +14,7 @@ namespace BoVoyageFinal.Services
         static void NouvelleReservation()
         {
             Console.WriteLine();
-            Esthetisme.MiseEnFormeTexte(">NOUVELLE RESERVATION",ConsoleColor.DarkBlue,centre:false);
+            Esthetisme.MiseEnFormeTexte("page : NOUVELLE RESERVATION",ConsoleColor.DarkBlue,centre:true);
 
             Console.Write("Selectionner l'id de la destination : ");
             var dest = int.Parse(Console.ReadLine());
