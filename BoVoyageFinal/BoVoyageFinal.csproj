@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dal\Contexte.cs" />
+    <Compile Include="Entites\AfficherMenu.cs" />
     <Compile Include="Entites\AgenceVoyage.cs" />
     <Compile Include="Entites\Assurance.cs" />
     <Compile Include="Entites\Client.cs" />
