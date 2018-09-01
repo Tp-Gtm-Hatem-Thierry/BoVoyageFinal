@@ -11,11 +11,8 @@ namespace BoVoyageFinal.Services
     {
         static void NouvelleReservation()
         {
-
             Console.WriteLine();
-            Console.WriteLine(">NOUVELLE RESERVATION");
-
-            
+            Entites.Esthetisme.MiseEnFormeTexte(">NOUVELLE RESERVATION",ConsoleColor.DarkBlue,centre:false);
 
             Console.Write("Selectionner l'id de la destination : ");
             var dest = int.Parse(Console.ReadLine());
@@ -35,8 +32,6 @@ namespace BoVoyageFinal.Services
             Console.Write("Quelle est l'agence fournisseur du voyage selectionné ?\n ");
             ServiceAgence.AfficherAgences();
             var agence = int.Parse(Console.ReadLine());
-
-            
         }
     }
 }
