@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BoVoyageFinal.Dal;
+using BoVoyageFinal.Entites;
+
 
 namespace BoVoyageFinal.Services
 {
@@ -12,7 +14,7 @@ namespace BoVoyageFinal.Services
         static void NouvelleReservation()
         {
             Console.WriteLine();
-            Entites.Esthetisme.MiseEnFormeTexte(">NOUVELLE RESERVATION",ConsoleColor.DarkBlue,centre:false);
+            Esthetisme.MiseEnFormeTexte(">NOUVELLE RESERVATION",ConsoleColor.DarkBlue,centre:false);
 
             Console.Write("Selectionner l'id de la destination : ");
             var dest = int.Parse(Console.ReadLine());
@@ -26,7 +28,7 @@ namespace BoVoyageFinal.Services
             Console.Write("Nombre de places disponibles : ");
             var places = int.Parse(Console.ReadLine());
 
-            Console.Write("Tarif par personne: ");
+            Console.Write("Tarif par personne : ");
             var prix = int.Parse(Console.ReadLine());
 
             Console.Write("Quelle est l'agence fournisseur du voyage selectionné ?\n ");

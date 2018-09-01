@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BoVoyageFinal.Dal;
+using BoVoyageFinal.Entites;
+
 
 namespace BoVoyageFinal.Services
 {
@@ -11,16 +13,14 @@ namespace BoVoyageFinal.Services
     {
         public static void AfficherDestination()
         {
-
             Console.WriteLine();
-            Console.WriteLine(">Destinations :");
+            Esthetisme.MiseEnFormeTexte(">Destination", ConsoleColor.DarkBlue, centre: false);
             using (var contexte = new Contexte())
             {
-
                 var destinations = contexte.Destinations;
                 foreach (var destination in destinations)
                 {
-                    Console.WriteLine($"({destination.Id}){destination.Continent}{destination.Pays} {destination.Region} {destination.Description}");
+                    Esthetisme.MiseEnFormeTexte($"({destination.Id}){destination.Continent}{destination.Pays} {destination.Region} {destination.Description}",ConsoleColor.Yellow,centre:true);
                 }
             }
         }

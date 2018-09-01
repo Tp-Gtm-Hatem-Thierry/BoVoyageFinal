@@ -23,7 +23,7 @@ namespace BoVoyageFinal.Services
 
                 foreach (var client in clients)
                 {
-                    Console.WriteLine($"({client.Id}){client.Civilite} {client.Nom} {client.Prenom} {client.DateNaissance} {client.Email}");
+                    Esthetisme.MiseEnFormeTexte($"({client.Id}){client.Civilite} {client.Nom} {client.Prenom} {client.DateNaissance} {client.Email}",ConsoleColor.Cyan,centre:true);
                 }
             }
         }
@@ -57,12 +57,12 @@ namespace BoVoyageFinal.Services
             Console.WriteLine(". 1 .Monsieur");
             Console.WriteLine(". 2 .Madame");
             Console.WriteLine(". 3 .Non Renseigné");
-            int choix = int.Parse(Console.ReadLine());
-            string civilite;
+            var civilite = Console.ReadLine();
+//            string civilite;
             bool continuer = true;
             while(continuer)
             {
-                switch (choix)
+                switch (int.Parse(civilite))
                 {
                 case 1:
                         civilite = "Monsieur";
@@ -89,7 +89,7 @@ namespace BoVoyageFinal.Services
             Console.WriteLine("Prenom : ");
             var prenom = Console.ReadLine();
 
-            Console.WriteLine("Date de Naissance :");
+            Console.WriteLine("Date de Naissance : ");
             DateTime date = DateTime.Parse(Console.ReadLine());
             var auj = DateTime.Now;
             TimeSpan duree = auj - date;
@@ -97,10 +97,10 @@ namespace BoVoyageFinal.Services
             double ageAnnee = ageJour / 365;
             int age = (int)ageAnnee;
 
-            Console.WriteLine("Adresse :");
+            Console.WriteLine("Adresse : ");
             var adresse = Console.ReadLine();
 
-            Console.WriteLine("Email");
+            Console.WriteLine("Email : ");
             var email = Console.ReadLine();
 
             Console.WriteLine("Telephone : \n");
@@ -118,17 +118,17 @@ namespace BoVoyageFinal.Services
 
             Console.WriteLine("Reservation : \n");
 
-            Console.WriteLine("Veuillez Selectionner l'id du voyage : ");
+            Console.WriteLine("Veuillez Selectionner l'id du voyage :");
             ServiceVoyage.AfficherVoyage();
             var idVoyage = int.Parse(Console.ReadLine());
 
             Console.Clear();
             AfficherAssurance();
-            Console.WriteLine("Veuillez Selectionner l'id de l'assurance :\n ");
-            int idAssurance = int.Parse(Console.ReadLine());
+            Console.WriteLine("Veuillez Selectionner l'id de l'assurance : \n");
+            var idAssurance = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Veuillez choisir le nombre de Participants : \n");
-            var nbParticipant = Console.ReadLine();
+            var nbParticipant = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Et voila on arrive au bout du code :(");
 
@@ -141,7 +141,6 @@ namespace BoVoyageFinal.Services
             {
                 contexte.Clients.Add(client);
                 contexte.DossiersReservations.Add(dossier);
-
                 contexte.SaveChanges();
             }
             

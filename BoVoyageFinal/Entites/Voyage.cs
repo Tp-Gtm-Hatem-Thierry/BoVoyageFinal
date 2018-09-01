@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+//using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BoVoyageFinal.Entites
 {
@@ -19,10 +19,10 @@ namespace BoVoyageFinal.Entites
         public int PlacesDisponibles { get; set; }
         public int PrixParPersonne { get; set; }
 
-        //[ForeignKey("IdAgenceVoyage")]
+        [ForeignKey("IdAgenceVoyage")]
         public int IdAgenceVoyage { get; set; }
 
-        //[ForeignKey("IdDestination")]
+        [ForeignKey("IdDestination")]
         public int IdDestination { get; set; }
 
         //public virtual ICollection<Destination> destinations { get; set; }
